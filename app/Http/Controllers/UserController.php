@@ -12,13 +12,13 @@ class UserController extends Controller
   {
       $this->middleware('auth');
   }
-
+  //prompts edit page with the current authenticated user 
   public function edit(User $user)
   {
       $user = Auth::user();
       return view('users.edit', compact('user'));
   }
-
+  // updates on edit click
   public function update(Request $request,User $user)
   {
 
